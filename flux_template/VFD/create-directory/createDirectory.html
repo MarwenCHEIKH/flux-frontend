@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Create Directory</title>
+  </head>
+
+  <script src="createDirectory.js"></script>
+  <body>
+    <a class="dropdown-item" href="./createDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Create Directory
+    </a>
+    <a class="dropdown-item" href="../update-directory/updateDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Update Directory
+    </a>
+    <a class="dropdown-item" href="../move-directory/moveDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Move Directory
+    </a>
+    <a class="dropdown-item" href="../delete-directory/deleteDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Delete Directory
+    </a>
+    <h1>Create a new VFD</h1>
+    <form id="createDirectory" onsubmit="createDirectory(); return false;">
+      <!-- Input for Absolute Path -->
+      <label for="dir_path"
+        >Enter the absolute path of the directory you are creating.</label
+      >
+      <br />
+      <input type="text" id="dir_path" name="dir_path" required />
+      <br />
+
+      <!-- Input for Alias -->
+      <label for="alias"
+        >Enter a name for the directory, unique for the whole VFD.
+      </label>
+      <br />
+      <input type="text" id="alias" name="alias" />
+      <br />
+
+      <!-- Input for Comments -->
+      <label for="comments"
+        >Enter a comment about the VFD directory (Maximum: 80 alphanumeric
+        characters.)</label
+      >
+      <br />
+      <textarea id="comments" name="comments"></textarea>
+      <br />
+
+      <!-- Checkbox for Mount Point -->
+      <label for="mount_point">
+        Enter a value to determine whether or not to mount the current
+        directory:</label
+      >
+
+      <input type="checkbox" id="mount_point" name="mount_point" value="Y" />
+      <br />
+
+      <!-- Input for Mount Directory Path -->
+      <label for="mount_dir_path"
+        >Enter the absolute path of the physical directory (RFD) to be
+        mounted.</label
+      >
+      <br />
+      <input type="text" id="mount_dir_path" name="mount_dir_path" />
+      <br />
+
+      <!-- Input for User Attribute -->
+      <label for="user_attribute"
+        >Enter a user parameter associated with the current directory.</label
+      >
+      <br />
+      <input type="text" id="user_attribute" name="user_attribute" />
+      <br />
+
+      <!-- Radio Buttons for Mailbox Recording Option -->
+      <label
+        >In RFD mode only, enter the Gateway Mailbox recording option.
+      </label>
+      <br />
+      <input
+        type="radio"
+        id="mr_yes"
+        name="mailbox_recording"
+        value="Y"
+        checked
+      />
+      <label for="mr_yes">Yes</label>
+      <input type="radio" id="mr_no" name="mailbox_recording" value="N" />
+      <label for="mr_no">No</label>
+      <br />
+
+      <!-- Select Dropdown for Filename Display Option -->
+      <label for="filename_display_option"
+        >Enter a value to indicate how file names are displayed</label
+      >
+      <br />
+      <select id="filename_display_option" name="filename_display_option">
+        <option value="XFB">XFB</option>
+        <option value="Standard">Standard</option>
+      </select>
+      <br />
+
+      <!-- Radio Buttons for Filename Duplicate Policy -->
+      <label>
+        Enter a value to indicate how duplicate file names are managed:
+      </label>
+      <br />
+      <input
+        type="radio"
+        id="fdp_duplicate"
+        name="filename_duplicate_policy"
+        value="duplicate"
+        checked
+      />
+      <label for="fdp_duplicate">Duplicate</label>
+      <input
+        type="radio"
+        id="fdp_forbid"
+        name="filename_duplicate_policy"
+        value="forbid"
+      />
+      <label for="fdp_forbid">Forbid</label>
+      <input
+        type="radio"
+        id="fdp_override"
+        name="filename_duplicate_policy"
+        value="override"
+      />
+      <label for="fdp_override">Override</label>
+      <br />
+      <label>Environnement:</label>
+      <input type="radio" id="env" name="env" value="UAT" checked />
+      <label for="env">UAT</label>
+
+      <input type="radio" id="env" name="env" value="Production" />
+      <label for="env">Production</label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

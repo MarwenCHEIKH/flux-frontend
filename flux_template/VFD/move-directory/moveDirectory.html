@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Move Directory</title>
+  </head>
+
+  <script src="moveDirectory.js"></script>
+  <body>
+    <a class="dropdown-item" href="../create-directory/createDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Create Directory
+    </a>
+    <a class="dropdown-item" href="../update-directory/updateDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Update Directory
+    </a>
+    <a class="dropdown-item" href="./moveDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Move Directory
+    </a>
+    <a class="dropdown-item" href="../delete-directory/deleteDirectory.html">
+      <i class="fa fa-feather-alt" aria-hidden="true"></i>
+      &nbsp;&nbsp; Delete Directory
+    </a>
+    <h1>Move a Directory</h1>
+    <form id="moveDirectory" onsubmit="moveDirectory(); return false;">
+      <!-- Input for Absolute Path -->
+      <label for="dir_path"
+        >Enter the absolute path of the directory you want to modify</label
+      >
+      <br />
+      <input type="text" id="dir_path" name="dir_path" required />
+      <br />
+
+      <!-- Input for Alias -->
+      <label for="alias"
+        >Enter the name of the directory that you want to modify.
+      </label>
+      <br />
+      <input type="text" id="alias" name="alias" required />
+      <br />
+
+      <label for="new_dir_path"
+        >Enter the new absolute path of the directory.
+      </label>
+      <br />
+      <input type="text" id="new_dir_path" name="new_dir_path" required />
+      <br />
+      <label>Environnement:</label>
+      <input type="radio" id="env" name="env" value="UAT" checked />
+      <label for="env">UAT</label>
+
+      <input type="radio" id="env" name="env" value="Production" />
+      <label for="env">Production</label>
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
